@@ -5,6 +5,17 @@
 
 #include <linux/version.h>
 
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,3,0))
+
+extern struct sk_buff *__pskb_copy(struct sk_buff *skb,
+				   int headroom, gfp_t gfp_mask);
+
+static inline void skb_complete_wifi_ack(struct sk_buff *skb, bool acked)
+{
+	WARN_ON(1);
+}
+#endif /* (LINUX_VERSION_CODE < KERNEL_VERSION(3,3,0)) */
+
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(3,4,0))
 
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(2,6,28))
