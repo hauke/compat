@@ -1,4 +1,5 @@
 #include <net/compat.h>
+#include "compat.h"
 
 /* This is the backport of pm-qos params for kernels <= 2.6.25 */
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(2,6,25))

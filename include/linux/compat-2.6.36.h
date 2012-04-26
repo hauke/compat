@@ -156,9 +156,6 @@ extern struct workqueue_struct *system_wq;
 extern struct workqueue_struct *system_long_wq;
 extern struct workqueue_struct *system_nrt_wq;
 
-void compat_system_workqueue_create(void);
-void compat_system_workqueue_destroy(void);
-
 int compat_schedule_work(struct work_struct *work);
 int compat_schedule_work_on(int cpu, struct work_struct *work);
 int compat_schedule_delayed_work(struct delayed_work *dwork,
@@ -185,14 +182,6 @@ extern unsigned int work_busy(struct work_struct *work);
 #define br_port_exists(dev)	(dev->br_port)
 
 #else
-
-static inline void compat_system_workqueue_create(void)
-{
-}
-
-static inline void compat_system_workqueue_destroy(void)
-{
-}
 
 /*
  * This is not part of The 2.6.37 kernel yet but we

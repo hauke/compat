@@ -1,4 +1,5 @@
 #include <linux/module.h>
+#include "compat.h"
 
 MODULE_AUTHOR("Luis R. Rodriguez");
 MODULE_DESCRIPTION("Kernel compatibility module");

@@ -10,6 +10,7 @@
 
 #include <linux/compat.h>
 #include <linux/usb.h>
+#include "compat.h"
 
 #ifdef CONFIG_COMPAT_USB_URB_THREAD_FIX
 /* Callers must hold anchor->lock */
