@@ -11,8 +11,6 @@
 
 #define NL80211_FEATURE_SK_TX_STATUS 0
 
-typedef u32 netdev_features_t;
-
 /* source include/linux/device.h */
 /**
  * module_driver() - Helper macro for drivers that don't do anything

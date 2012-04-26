@@ -1,9 +1,15 @@
 #ifndef _COMPAT_LINUX_NETDEVICE_H
 #define _COMPAT_LINUX_NETDEVICE_H
 
-#include_next <linux/netdevice.h>
-
 #include <linux/version.h>
+
+#if (LINUX_VERSION_CODE < KERNEL_VERSION(3,3,0))
+
+#include <linux/netdev_features.h>
+
+#endif /* (LINUX_VERSION_CODE < KERNEL_VERSION(3,3,0)) */
+
+#include_next <linux/netdevice.h>
 
 #if (LINUX_VERSION_CODE < KERNEL_VERSION(2,6,29))
 
