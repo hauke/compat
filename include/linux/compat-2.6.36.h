@@ -179,23 +179,6 @@ extern unsigned int work_busy(struct work_struct *work);
 #define schedule_delayed_work_on(cpu, dwork, delay) compat_schedule_delayed_work_on(cpu, dwork, delay)
 #define flush_scheduled_work(a) compat_flush_scheduled_work(a)
 
-#define br_port_exists(dev)	(dev->br_port)
-
-#else
-
-/*
- * This is not part of The 2.6.37 kernel yet but we
- * we use it to optimize the backport code we
- * need to implement. Instead of using ifdefs
- * to check what version of the check we use
- * we just replace all checks on current code
- * with this. I'll submit this upstream too, that
- * way all we'd have to do is to implement this
- * for older kernels, then we would not have to
- * edit the upstrema code for backport efforts.
- */
-#define br_port_exists(dev)	(dev->priv_flags & IFF_BRIDGE_PORT)
-
 #endif /* (LINUX_VERSION_CODE < KERNEL_VERSION(2,6,36)) */
 
 #endif /* LINUX_26_36_COMPAT_H */
