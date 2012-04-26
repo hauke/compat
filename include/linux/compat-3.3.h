@@ -11,28 +11,6 @@
 
 #define NL80211_FEATURE_SK_TX_STATUS 0
 
-/* source include/linux/device.h */
-/**
- * module_driver() - Helper macro for drivers that don't do anything
- * special in module init/exit. This eliminates a lot of boilerplate.
- * Each module may only use this macro once, and calling it replaces
- * module_init() and module_exit().
- *
- * Use this macro to construct bus specific macros for registering
- * drivers, and do not use it on its own.
- */
-#define module_driver(__driver, __register, __unregister) \
-static int __init __driver##_init(void) \
-{ \
-	return __register(&(__driver)); \
-} \
-module_init(__driver##_init); \
-static void __exit __driver##_exit(void) \
-{ \
-	__unregister(&(__driver)); \
-} \
-module_exit(__driver##_exit);
-
 /* source include/linux/usb.h */
 /**
  * module_usb_driver() - Helper macro for registering a USB driver
