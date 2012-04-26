@@ -7,8 +7,6 @@
 
 #else
 
-#include <linux/compat-2.6.h>
-
 #undef CONFIG_RFKILL
 #undef CONFIG_RFKILL_INPUT
 #undef CONFIG_RFKILL_LEDS

@@ -31,7 +31,6 @@ else
 # when building our compat modules. Your own makefile would look
 # the same.
 NOSTDINC_FLAGS := -I$(M)/include/ \
-	-include $(M)/include/linux/compat-2.6.h \
 	$(CFLAGS) \
 	-DCOMPAT_BASE_TREE="\"$(COMPAT_BASE_TREE)\"" \
 	-DCOMPAT_BASE_TREE_VERSION="\"$(COMPAT_BASE_TREE_VERSION)\"" \
